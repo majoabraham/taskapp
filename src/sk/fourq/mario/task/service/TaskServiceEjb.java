@@ -1,11 +1,8 @@
 package sk.fourq.mario.task.service;
 
 import java.util.List;
-
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.enterprise.context.RequestScoped;
-
 import sk.fourq.mario.task.dao.TaskDao;
 import sk.fourq.mario.task.domain.Task;
 
@@ -15,44 +12,44 @@ import sk.fourq.mario.task.domain.Task;
 @Stateless
 public class TaskServiceEjb implements TaskService {
 
-	@EJB
-	private TaskDao taskDao;
+    @EJB
+    private TaskDao taskDao;
 
-	@Override
-	public Task get(Integer id) {
+    @Override
+    public Task get(Integer id) {
 
-		return taskDao.get(id);
-	}
+        return taskDao.get(id);
+    }
 
-	@Override
-	public List<Task> getAll() {
+    @Override
+    public List<Task> getAll() {
 
-		return taskDao.getAll();
-	}
+        return taskDao.getAll();
+    }
 
-	@Override
-	public void save(Task task) {
+    @Override
+    public void save(Task task) {
 
-		taskDao.save(task);
-	}
+        taskDao.save(task);
+    }
 
-	@Override
-	public void update(Task task) {
-		
-		taskDao.update(task);
-	}
+    @Override
+    public void update(Task task) {
 
-	@Override
-	public void delete(Integer id) {
+        taskDao.update(task);
+    }
 
-		Task task = taskDao.get(id);
-		
-		taskDao.delete(task);
-	}
+    @Override
+    public void delete(Integer id) {
 
-	@Override
-	public List<Task> filter(String requiredString) {
+        Task task = taskDao.get(id);
 
-		return taskDao.filter(requiredString);
-	}
+        taskDao.delete(task);
+    }
+
+    @Override
+    public List<Task> filter(String requiredString) {
+
+        return taskDao.filter(requiredString);
+    }
 }

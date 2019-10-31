@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="TaskApp:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>TaskApp</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="TaskApp.war">
+      <element id="artifact" artifact-name="TaskApp:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -18,65 +18,65 @@ import sk.fourq.mario.task.domain.Task;
 import sk.fourq.mario.task.service.TaskService;
 
 /**
- * JAX-RS resources for Task domain. 
+ * JAX-RS resources for Task domain.
  */
 @Path("/tasks")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class ResourceApi {
 
-	@EJB
-	private TaskService taskService;
-	
-	@GET
-	public Response getTasks() {
+    @EJB
+    private TaskService taskService;
 
-		List<Task> tasks = taskService.getAll();
-		
-		return Response.ok(tasks).build();
-	}
+    @GET
+    public Response getTasks() {
 
-	@Path("/{id}")
-	@GET
-	public Response getTask(@PathParam("id") Integer id) {
+        List<Task> tasks = taskService.getAll();
 
-		Task task = taskService.get(id);
-		
-		return Response.ok(task).build();
-	}	
+        return Response.ok(tasks).build();
+    }
 
-	@POST
-	public Response createTask(Task task) {
+    @Path("/{id}")
+    @GET
+    public Response getTask(@PathParam("id") Integer id) {
 
-		taskService.save(task);
+        Task task = taskService.get(id);
 
-		return Response.ok().status(Response.Status.CREATED).build();
+        return Response.ok(task).build();
+    }
 
-	}
-	
-	@Path("/{id}")
-	@DELETE
-	public Response deleteTask(@PathParam("id") Integer id) {
+    @POST
+    public Response createTask(Task task) {
 
-		taskService.delete(id);
-		
-		return Response.ok().build();
-	}
-	
-	@PUT
-	public Response updateTask(Task task) {
+        taskService.save(task);
 
-		taskService.update(task);
-		
-		return Response.ok().build();
-	}
-	
-	@Path("/filter/{text}")
-	@GET
-	public Response filterTasks(@PathParam("text") String text) {
+        return Response.ok().status(Response.Status.CREATED).build();
 
-		List<Task> tasks = taskService.filter(text);
-		
-		return Response.ok(tasks).build();
-	}
+    }
+
+    @Path("/{id}")
+    @DELETE
+    public Response deleteTask(@PathParam("id") Integer id) {
+
+        taskService.delete(id);
+
+        return Response.ok().build();
+    }
+
+    @PUT
+    public Response updateTask(Task task) {
+
+        taskService.update(task);
+
+        return Response.ok().build();
+    }
+
+    @Path("/filter/{text}")
+    @GET
+    public Response filterTasks(@PathParam("text") String text) {
+
+        List<Task> tasks = taskService.filter(text);
+
+        return Response.ok(tasks).build();
+    }
 }

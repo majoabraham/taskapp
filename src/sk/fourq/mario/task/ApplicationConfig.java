@@ -11,11 +11,11 @@ import sk.fourq.mario.task.api.ResourceApi;
 @ApplicationPath("/")
 public class ApplicationConfig extends Application {
 
-	@Override
-	public Set<Class<?>> getClasses() {
-	    final Set<Class<?>> classes = new HashSet<>();
-	    // register root resource
-	    classes.add(ResourceApi.class);
-	    return classes;
-	}
+    @Override
+    public Set<Class<?>> getClasses() {
+        final Set<Class<?>> classes = new HashSet<>();
+        // register root resource
+        classes.add(ResourceApi.class);
+        return classes;
+    }
 }
