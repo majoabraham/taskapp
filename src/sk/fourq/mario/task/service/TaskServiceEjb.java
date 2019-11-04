@@ -1,8 +1,8 @@
 package sk.fourq.mario.task.service;
 
 import java.util.List;
-import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import sk.fourq.mario.task.dao.TaskDao;
 import sk.fourq.mario.task.domain.Task;
 
@@ -12,7 +12,7 @@ import sk.fourq.mario.task.domain.Task;
 @Stateless
 public class TaskServiceEjb implements TaskService {
 
-    @EJB
+    @Inject
     private TaskDao taskDao;
 
     @Override

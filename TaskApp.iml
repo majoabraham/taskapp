@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <datasource-mapping>
+          <factory-entry name="testH2DB" />
+        </datasource-mapping>
+        <naming-strategy-map />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
+      </configuration>
+    </facet>
+  </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_12">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -17,6 +29,7 @@
           <root url="jar://C:/Soft/wildfly-16.0.0.Final/modules/system/layers/base/javax/validation/api/main/validation-api-2.0.1.Final.jar!/" />
           <root url="jar://C:/Soft/wildfly-16.0.0.Final/modules/system/layers/base/javax/persistence/api/main/javax.persistence-api-2.2.jar!/" />
           <root url="jar://C:/Soft/wildfly-16.0.0.Final/modules/system/layers/base/javax/enterprise/api/main/cdi-api-2.0.SP1.jar!/" />
+          <root url="jar://C:/Soft/wildfly-16.0.0.Final/modules/system/layers/base/javax/inject/api/main/javax.inject-1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

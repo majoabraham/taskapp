@@ -1,15 +1,11 @@
 package sk.fourq.mario.task.dao;
 
 import java.util.List;
-
-import javax.ejb.Local;
-
 import sk.fourq.mario.task.domain.Task;
 
 /**
  * Interface TaskDao serves to interact with database.
  */
-@Local
 public interface TaskDao {
     /**
      * Get one concrete task from database.
